@@ -1,0 +1,75 @@
+#!/usr/bin/env python
+import json
+from os.path import join
+import sys
+from os.path import exists
+from os import listdir
+from os.path import isdir
+from time import sleep
+
+from os import path
+sys.path.append( path.dirname( path.dirname( path.abspath(__file__) ) ) )
+from tools.unity_bridge import UnityBridge
+
+
+class DataReplay(object):
+    def __init__(self, id_user, ip_interface, port):
+        self.bridge = UnityBridge(ip=ip_interface, port=port)
+        # get the gender from the survey to set the correct model
+        self.set_model(id_user)
+
+    def set_model(self, id_user):
+        with open(join('..', 'results', 'user_study_dataset', 'survey.json')) as datafile:
+            survey_data = json.load(datafile)
+        i = 0
+        while i < len(survey_data):
+            if str(survey_data[i]['id']) == id_user:
+                user_gender = survey_data[i]['Gender']
+                break
+            i += 1
+        if user_gender == "M":
+            id_model = 0
+        else:
+            id_model = 1
+        self.bridge.activate_model(id_model)
+
+    def replay_data(self, data):
+        for state in data['states']:
+            self.bridge.send_state(state)
+            sleep(0.05)
+        return 0
+
+
+def main(argv):
+    ip_interface = "localhost"
+    port = 5005
+
+    if len(argv) < 2:
+        print "To replay the data of one specific user, please indicate in argument the id of the selected user (number from 0 to 9999)."
+        return 1
+    id_user = argv[1]
+    res_dir = join('..', 'results', 'user_study_dataset', id_user)
+    if not exists(res_dir):
+        print "Incorrect argument. User folder does not exist."
+        return 1
+
+    print "Replaying data for user " + id_user +". Please start the graphical interface and press any key when ready."
+    raw_input()
+    replay = DataReplay(id_user=id_user, ip_interface=ip_interface, port=port)
+    dir_results = join(res_dir, 'records')
+    conditions = [name for name in listdir(dir_results) if isdir(join(dir_results, name))]
+    shapes = ['star', 'hexagon', 'ellipse', 'slice', 'trapezium']
+    for c in conditions:
+        for s in shapes:
+            # open result file
+            filename = join(dir_results, c, s, 'replay.json')
+            with open(filename) as datafile:
+                data = json.load(datafile)
+            print "#####"
+            print "Replaying condition " + c + " and shape " + s + "."
+            replay.replay_data(data)
+    return 0
+
+
+if __name__ == '__main__':
+    main(sys.argv)
