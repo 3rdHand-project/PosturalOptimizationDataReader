@@ -11,6 +11,12 @@ If you are on Linux you can also directly use the script [get_results_data.sh](g
 chmod +x get_results_data.sh && ./get_results_data.sh
 ```
 
+To install python dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
 Several scripts to analyze the data are available in the [scripts](scripts) folder.
 Especially, the script [replay_data](scripts/replay_data) will read the replay files for a specific user.
 You can run it by specifying the user id (name of folder in the results file) as parameter.
