@@ -21,7 +21,10 @@ python replay_data 17
 ```
 
 The recorded data are made to be viewed with the [graphical interface](https://github.com/3rdHand-project/PosturalFeedbackInterface) we have developped.
-In this repository we have included the executables of a modified version of the interface adapted for replaying recorded data.
+In this repository we have [released](https://github.com/3rdHand-project/PosturalOptimizationDataReader/releases/latest) the executables of a modified version of the interface adapted for replaying recorded data.
+Download the executable depending on your OS and extract the archive.
+We recommand you to extract it in a bin folder.
+After extraction you can run the executable and follow the instructions on screen.
 
 For Windows user run:
 ```
@@ -32,3 +35,5 @@ For Linux user run:
 ```
 ./ReplayInterface.x86_64
 ```
+
+For more information on the graphical interface, please refer to its [own repository](https://github.com/3rdHand-project/PosturalFeedbackInterface).
