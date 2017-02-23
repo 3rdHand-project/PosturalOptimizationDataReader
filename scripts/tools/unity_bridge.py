@@ -155,7 +155,7 @@ class UnityBridge(object):
         chan = self.corresp_dict['channels']['/model']
         self.udp.send_int(chan, model_id)
 
-    def activate_risk_frames(self, risk_dict):
+    def send_risk_values(self, risk_dict):
         sent_vect = [risk_dict[f] for f in self.corresp_dict['links']]
         chan = self.corresp_dict['channels']['/risk']
         self.udp.send_float_vector(chan, sent_vect)
