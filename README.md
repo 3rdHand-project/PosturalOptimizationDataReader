@@ -36,4 +36,4 @@ For Linux user run:
 ./ReplayInterface.x86_64
 ```
 
-For more information on the graphical interface, please refer to its [own repository](https://github.com/3rdHand-project/PosturalFeedbackInterface)
+For more information on the graphical interface, please refer to its [own repository](https://github.com/3rdHand-project/PosturalFeedbackInterface).
