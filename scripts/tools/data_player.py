@@ -26,7 +26,7 @@ class DataPlayer(object):
             survey_data = json.load(datafile)
         i = 0
         while i < len(survey_data):
-            if str(survey_data[i]['id']) == id_user:
+            if str(survey_data[i]['ID']) == id_user:
                 user_gender = survey_data[i]['Gender']
                 break
             i += 1
