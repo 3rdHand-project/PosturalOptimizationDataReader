@@ -5,7 +5,7 @@ This repository contains all the necessary materials to replay and/or reuse the 
 The first necessary step is to download the data that are published on a [Zenodo repository](https://zenodo.org/record/321599) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.321599.svg)](https://doi.org/10.5281/zenodo.321599)
 
 At the project root you can create the results folder and unzip the data folder inside it.
-If you are on Linux you can also directly use the script [get_results_data.sh](get_results_data.sh) that will perform the necessary steps.
+If you are on Linux or Mac you can also directly use the script [get_results_data.sh](get_results_data.sh) that will perform the necessary steps.
 
 ```
 chmod +x get_results_data.sh && ./get_results_data.sh
