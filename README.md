@@ -32,14 +32,16 @@ Download the executable depending on your OS and extract the archive.
 We recommand you to extract it in a bin folder.
 After extraction you can run the executable and follow the instructions on screen.
 
-For Windows user run:
+For Windows users, run:
 ```
 ReplayInterface.exe
 ```
 
-For Linux user run:
+For Linux users, run:
 ```
 ./ReplayInterface.x86_64
 ```
+
+For Mac users, launch the app file.
 
 For more information on the graphical interface, please refer to its [own repository](https://github.com/3rdHand-project/PosturalFeedbackInterface).
