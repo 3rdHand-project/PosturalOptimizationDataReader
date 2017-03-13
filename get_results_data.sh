@@ -12,14 +12,14 @@ fi
 
 
 mkdir -p bin
-if [ "$(expr substr $(uname -s) 1 5)" == "Linux" ] && [ ! -d "bin/ReplayInterfaceLinux" ]; then
+if [ "$(uname)" = "Linux" ] && [ ! -d "bin/ReplayInterfaceLinux" ]; then
 	cd bin
 	echo "Downloading graphical interface binary for Linux system"
 	wget https://github.com/3rdHand-project/PosturalOptimizationDataReader/releases/download/v1.0/ReplayInterfaceLinux.tar.gz
 	tar -xzf ReplayInterfaceLinux.tar.gz
 	rm ReplayInterfaceLinux.tar.gz
 	cd ..
-elif [ "$(uname)" == "Darwin" ] && [ ! -d "bin/ReplayInterfaceMac" ]; then
+elif [ "$(uname)" = "Darwin" ] && [ ! -d "bin/ReplayInterfaceMac" ]; then
 	cd bin
 	echo "Downloading graphical interface binary for Mac system"
 	wget https://github.com/3rdHand-project/PosturalOptimizationDataReader/releases/download/v1.0/ReplayInterfaceMac.tar.gz
