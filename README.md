@@ -1,6 +1,6 @@
 # Postural Optimization Data Reader
 
-This repository contains all the necessary materials to replay and/or reuse the data collected during the experiment made in the context of the publication Postural Optimization for a Safe and Comfortable Human-Robot Interaction.
+This repository contains all the necessary materials to replay and/or reuse the data collected during the experiment made in the context of the publication "Postural Optimization for a Safe and Comfortable Human-Robot Interaction" (IROS 2017). A video of this experiment is available on our [Vimeo channel](https://vimeo.com/163699896).
 
 The first necessary step is to download the data that are published on a [Zenodo repository](https://zenodo.org/record/321599) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.321599.svg)](https://doi.org/10.5281/zenodo.321599)
 
